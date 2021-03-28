@@ -1,0 +1,76 @@
+{% load static %} {% block body %} {% include 'admin_login_navigation.html' %}
+
+<marquee behavior="" direction="right">Change status</marquee>
+
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <label class="text" for="fname" name="uname">Username</label>
+  <input
+    type="text"
+    id="fname"
+    name="uname"
+    value="{{recruiter.user.first_name}} {{recruiter.user.last_name}}"
+  />
+
+  <label class="text" for="lname">Status</label>
+  <select name="status" class="form-control">
+    <option value="Accept">Accept</option>
+    <option value="Reject">Reject</option>
+  </select>
+  <button
+    type="submit"
+    class="btn btn-primary"
+    style="margin-top: 12px; width: 140px"
+  >
+    Submit
+  </button>
+</form>
+
+<style>
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    font-family: "Roboto", sans-serif;
+  }
+
+  input[type="text"],
+  .form-control {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 20px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid black;
+  }
+
+  marquee {
+    font-family: "Girassol", cursive;
+    background-color: cornflowerblue;
+    margin-top: 25px;
+    padding: 4px;
+    font-size: 2.2rem;
+    font-style: italic;
+  }
+
+  .text {
+    margin-bottom: -21px;
+    font-size: xx-large;
+  }
+
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Girassol&display=swap");
+</style>
+
+{% ifequal error 'no' %}
+<script>
+  alert("Status Changed Successful");
+  window.location = ('{% url 'recruiter_pending' %}');
+</script>
+{% endifequal %} {% ifequal error 'yes' %}
+<script>
+  alert("Something Went Wrong. Try again...");
+</script>
+{% endifequal %} {% endblock %}

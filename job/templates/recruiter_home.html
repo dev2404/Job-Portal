@@ -1,0 +1,137 @@
+{% load static %} {% block body %} {% include 'recruiter_navigation.html' %}
+
+
+<marquee behavior="" direction="right">Recruiter Profile</marquee>
+
+<div class="container">
+    <div class="form">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row g-3">
+                <div class="col">
+                    <input type="text" class="form-control" value="{{recruiter.user.first_name}}"
+                        aria-label="First name" name="fname" required />
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" value="{{recruiter.user.last_name}}" aria-label="Last name"
+                        name="lname" required />
+                </div>
+            </div>
+
+            <div class="row g-3">
+                <div class="col">
+                    <input type="phone" class="form-control" value="{{recruiter.mobile}}" aria-label="Last name"
+                        name="contact" required />
+                </div>
+                <div class="col">
+                    <input type="email" class="form-control" value="{{recruiter.user.username}}" readonly
+                        aria-label="First name" name="email" required />
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <input type="text" name="company" class="form-control" id="formGroupExampleInput2"
+                    value="{{recruiter.company}}" required />
+            </div>
+
+
+            <div class="radio" style="margin-top: 15px">
+                <label class="form-check-label" style="margin-right: 10px" for="inlineRadio2" required>Gender</label>
+
+                {% if recruiter.gender == "male" %}
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Male" checked />
+                    <label class="form-check-label" for="inlineRadio1">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="Female" />
+                    <label class="form-check-label" for="inlineRadio2">Female</label>
+                </div>
+            </div>
+            {% else %}
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Male" />
+                <label class="form-check-label" for="inlineRadio1">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="Female" checked />
+                <label class="form-check-label" for="inlineRadio2">Female</label>
+            </div>
+    </div>
+    {% endif %}
+
+    <div class="input-group mb-3">
+        <input type="file" name="image" class="form-control" id="inputGroupFile02" />
+        <label class="input-group-text" for="inputGroupFile02">Upload</label>
+    </div>
+
+    <input type="submit" class="btn btn-primary" value="Register" />
+    </form>
+</div>
+<div class="image">
+    <img src="{{recruiter.image.url}}">
+
+</div>
+
+</div>
+
+<style>
+    form {
+        margin-top: 30px;
+        padding: 20px;
+        width: 75%;
+        margin-left: 190px;
+        background-color: lightslategray;
+        border-radius: 12px;
+        position: absolute;
+        left: 40px;
+        width: max-content;
+
+    }
+
+    input {
+        margin-top: 20px;
+    }
+
+    img {
+        width: 200px;
+        height: 200px;
+        top: 130px;
+        position: relative;
+        right: 199px;
+        margin-left: 23rem;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-evenly;
+        margin: auto;
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                'copyHtml5',
+                'excelHtml5',
+                'csvHtml5',
+                'pdfHtml5'
+            ]
+        });
+    });
+</script>
+{% ifequal error 'no' %}
+<script>
+    alert("Profile Updated Successful");
+    window.location = ('{% url 'recruiter_home' %}');
+</script>
+{% endifequal %} {% ifequal error 'yes' %}
+<script>
+    alert("Somethong went wrong. Try again...");
+</script>
+{% endifequal %} {% endblock %}
+
+
+{

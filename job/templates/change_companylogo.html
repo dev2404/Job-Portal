@@ -1,0 +1,56 @@
+{% load static %} {% block body %} {% include 'recruiter_navigation.html' %}
+
+<marquee behavior="" direction="right">Change Company Logo</marquee>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="col">
+        <label>Job Title</label>
+        <input type="text" name="experience" class="form-control" id="formGroupExampleInput2" value="{{job.title}}"
+            readonly required />
+    </div>
+
+
+
+    <div class="row g-3">
+        <div class="col">
+            <img src="{{job.image.url}}" style="width: 100px; height: 100px;">
+        </div>
+    </div>
+
+    <div class="row g-3">
+
+        <div class="col">
+            <input type="file" class="form-control" aria-label="First name" name="logo" required />
+        </div>
+    </div>
+
+
+    <input type="submit" class="btn btn-primary" value="Register" />
+</form>
+
+<style>
+    form {
+        margin-top: 30px;
+        padding: 20px;
+        width: 75%;
+        margin-left: 190px;
+        background-color: lightslategray;
+        border-radius: 12px;
+    }
+
+    input {
+        margin-top: 20px;
+    }
+</style>
+
+{% ifequal error 'no' %}
+<script>
+    alert("Company Logo has been Successful Updated");
+    window.location = ('{% url 'change_companylogo' job.id %}');
+</script>
+{% endifequal %} {% ifequal error 'yes' %}
+<script>
+    alert("Somethong went wrong. Try again...");
+</script>
+{% endifequal %} {% endblock %}
