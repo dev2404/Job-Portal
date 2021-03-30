@@ -29,7 +29,7 @@ Recruiter can select the appropriate candidate according to their requirements.
 
 First clone the repository from Github and switch to the new directory:
 
-    $ git clone git@github.com/USERNAME/{{ project_name }}.git
+    $ git clone https://github.com/dev2404/Job-Portal.git
     $ cd into the repository
     
 Activate the virtualenv for your project.
