@@ -1,182 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-  </head>
 
-<section class="text-gray-600 body-font relative">
-    <div class="container px-5 py-24 mx-auto" style="padding-top: 1rem">
-      <div class="flex flex-col text-center w-full mb-12">
-        <h1
-          class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900"
-        >
-          Register Yourself Recruiter
-        </h1>
-      </div>
-      <div class="lg:w-1/2 md:w-2/3 mx-auto" style="margin-top: -33px">
-        <div class="flex flex-wrap -m-2">
-          <div class="p-2 w-1/2">
-            <div class="relative">
-              <label for="name" class="leading-7 text-sm text-gray-600"
-                >First Name</label
-              >
-              <input
-                type="text"
-                id="name"
-                name="fname"
-                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              />
-            </div>
-          </div>
-          <div class="p-2 w-1/2">
-            <div class="relative">
-              <label for="email" class="leading-7 text-sm text-gray-600"
-                >Last Name</label
-              >
-              <input
-                type="text"
-                id="email"
-                name="lname"
-                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              />
-            </div>
-          </div>
-          <div class="p-2 w-1/2">
-            <div class="relative">
-              <label for="email" class="leading-7 text-sm text-gray-600"
-                >Phone Number</label
-              >
-              <input
-                type="phone"
-                id="email"
-                name="contact"
-                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              />
-            </div>
-          </div>
-          <div class="p-2 w-1/2">
-            <div class="relative">
-              <label for="email" class="leading-7 text-sm text-gray-600"
-                >Email</label
-              >
-              <input
-                type="email"
-                id="email"
-                name="email"
-                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              />
-            </div>
-          </div>
-          <div class="p-2 w-1/2" style="width: 100%">
-            <div class="relative">
-              <label for="email" class="leading-7 text-sm text-gray-600"
-                >Company Name</label
-              >
-              <input
-                type="text"
-                id="email"
-                name="company"
-                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              />
-            </div>
-          </div>
-          <div class="p-2 w-1/2">
-            <div class="relative">
-              <label for="email" class="leading-7 text-sm text-gray-600"
-                >Password</label
-              >
-              <input
-                type="password"
-                id="email"
-                name="pwd"
-                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              />
-            </div>
-          </div>
-          <div class="p-2 w-1/2">
-            <div class="relative">
-              <label for="email" class="leading-7 text-sm text-gray-600"
-                >Confirm Password</label
-              >
-              <input
-                type="password"
-                id="email"
-                name="cpwd"
-                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              />
-            </div>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+</head>
 
-          <div class="block p-2 w-1/2">
-            <span class="text-gray-700">Gender</span>
-            <div class="mt-2">
-              <div>
-                <label class="inline-flex items-center">
-                  <input
-                    type="radio"
-                    class="form-radio"
-                    name="gender"
-                    value="Male"
-                  />
-                  <span class="ml-2">Male</span>
-                </label>
-              </div>
-              <div>
-                <label class="inline-flex items-center">
-                  <input
-                    type="radio"
-                    class="form-radio leading-7 text-sm text-gray-600"
-                    name="gender"
-                    value="Female"
-                  />
-                  <span class="ml-2">Female</span>
-                </label>
-              </div>
-            </div>
-          </div>
-          <div class="p-2">
-            <div class="relative">
-              <label for="email" class="leading-7 text-sm text-gray-600"
-                >CV/Resume</label
-              >
-              <input
-                type="file"
-                class="custom-file-input"
-                id="customFile"
-                name="image"
-              />
-            </div>
-          </div>
+<body>
+  <div class="wrapper">
+    <div class="left">
+      <img src="/home/dev/Desktop/django/JOB-PORTAL/jobportal/job/static/images/p2.jpg" alt="user" width="100">
+      <h4>ALex William</h4>
+      <p>developer</p>
+    </div>
+    <div class="right">
 
-          <div class="p-2 w-full">
-            <input
-              type="submit"
-              value="register"
-              class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
-            />
+      <div class="info">
+        <h3>information</h3>
+        <div class="info_data">
+          <div class="data">
+            <h4>Email</h4>
+            <p>alex2gmail.com</p>
+          </div>
+          <div class="data">
+            <h4>Phone</h4>
+            <p>084084-4383289</p>
           </div>
         </div>
       </div>
+
+
+      <div class="projects">
+        <h2>projects</h2>
+        <div class="projects_data">
+          <div class="data">
+            <h4>recent</h4>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+          <div class="data">
+            <h4>most viewed</h4>
+            <p>dollar sit amet.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </section>  </body>
+  </div>
+</body>
 
-  <script>
-    window.addEventListener("DOMContentLoaded", () => {
-      const menuBtn = document.querySelector("#menu-btn");
-      const dropdown = document.querySelector("#dropdown");
-
-      menuBtn.addEventListener("click", () => {
-        dropdown.classList.toggle("hidden");
-        dropdown.classList.toggle("flex");
-      });
-    });
-  </script>
 </html>
 
 <!-- 
