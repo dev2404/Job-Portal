@@ -24,6 +24,12 @@ Recruiter can select the appropriate candidate according to their requirements.
 * Job Posting
 * Job Searching
 
+## Technologies Used
+* Python - Django
+* Tailwind CSS
+* Html
+* JavaScript
+
 
 # How to start with the project 
 
